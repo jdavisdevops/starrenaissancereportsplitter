@@ -1,0 +1,31 @@
+<!-- Embedded inside of home page for parent/students public portal. -->
+<!-- Begin Renaissance URL Gen -->
+
+<div id = "tag2" style="text-align: center"> <a id="rkey2" href="#" onclick="renurlgen();">Download Renaissance Report Here</a> </div>
+<td>
+	<input type="hidden" id="rkey" name="[Students.U_StudentsUserFields]AUSD_HASHKEY" maxlength="40" size="30" value="">
+	<input type = "hidden" id = "grd_lvl" name= "[01]grade_level" value = "">
+</td>
+
+<script type="text/javascript">
+var g = document.getElementById('grd_lvl').value;
+var hash = document.getElementById('rkey').value;
+if(g > 5 && g < 9 && hash !== '') {
+	document.getElementById("tag2").style.display = 'text-align: center';
+	document.getElementById("rkey2").style.display = 'inline';
+}	else {
+	document.getElementById("tag2").style.display = 'none';
+}
+</script>
+
+<script type="text/javascript">
+function renurlgen(){
+    var pd = ".pdf";
+	var hash = document.getElementById('rkey').value;
+    var lnk = document.getElementById('rkey2');
+    lnk.href = "/guardian/renreports/" + hash + pd;
+    
+}
+</script>
+
+<!-- End Reports URL Gen -->
